@@ -16,12 +16,12 @@ curl -O https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
 bash Anaconda3-2019.03-Linux-x86_64.sh
 ```
 
-After completing the installation, please create and initiate the workspace with the specific versions below. The experiments were conducted on a Linux server with a single `GeForce RTX 2080Ti GPU`, CUDA 11.1, Torch 1.9.
+After completing the installation, please create and initiate the workspace with the specific versions below. The experiments were conducted on a Linux server with a single `GeForce RTX 2080Ti GPU`, CUDA 10.1/10.2, Torch 1.7.
 
 ```
 conda create --name FSCDIS python=3
 conda activate FSCDIS
-conda install pytorch==1.9.0 torchvision cudatoolkit=11.1 -c pytorch -c nvidia -y
+conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=10.2 -c pytorch
 ```
 
 This source code is based on [Detectron2](https://github.com/facebookresearch/detectron2). Please refer to INSTALL.md for the pre-built or building Detectron2 from source.
@@ -38,8 +38,6 @@ The proposed CAMO-FS is available at this [link]().
 ### Register datasets
 Detectron2 requires a step of data registration for those who want to use the external datasets ([Detectron2 Docs](https://detectron2.readthedocs.io/en/latest/tutorials/datasets.html)).
 
-```
-```
 
 ## 3. Training Pipeline
 Our proposed FS-CDIS framework:
@@ -48,7 +46,7 @@ Our proposed FS-CDIS framework:
 
 
 
-Initial parameters:
+<!-- Initial parameters:
 ```
 
 ```
@@ -63,7 +61,7 @@ Initial parameters:
 
 ```
 
-```
+``` -->
 
 The whole script commands can be found in `./scripts/*`.
 
