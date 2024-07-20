@@ -52,7 +52,7 @@ Our detailed proposals of instance triplet loss and instance memory storage:
 
 ### Configurations
 
-All configs can be found in the ./configs/ directory.
+All configs can be found in the `./configs/` directory.
 
 <!-- Initial parameters:
 ```
@@ -107,8 +107,11 @@ Please use the following bibtex to cite this repository:
 @article{nguyen2024few,
   title={Few-shot Camouflaged Animal Detection and Segmentation},
   author={Nguyen, Thanh-Danh and Vu, Anh-Khoa Nguyen and Nguyen, Nhat-Duy and Nguyen, Vinh-Tiep and Ngo, Thanh Duc and Do, Thanh-Toan and Tran, Minh-Triet and Nguyen, Tam V},
-  journal={arXiv preprint arXiv:2304.07444},
-  year={2024}
+  journal={IEEE Access},
+  volume={-},
+  pages={-},
+  year={2024},
+  publisher={IEEE}
 }
 ```
 
