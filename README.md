@@ -1,9 +1,9 @@
 # The Art of Camouflage: Few-shot Learning for Animal Detection and Segmentation
 
 This repository is the official implementation of the paper entitled: **The Art of Camouflage: Few-shot Learning for Animal Detection and Segmentation**
-**Authors**: Thanh-Danh Nguyen , Anh-Khoa Nguyen Vu, Nhat-Duy Nguyen, Vinh-Tiep Nguyen, Thanh Duc Ngo, Thanh-Toan Do, Minh-Triet Tran, Tam V. Nguyen*.
+**Authors**: Thanh-Danh Nguyen, Anh-Khoa Nguyen Vu, Nhat-Duy Nguyen, Vinh-Tiep Nguyen, Thanh Duc Ngo, Thanh-Toan Do, Minh-Triet Tran, Tam V. Nguyen*.
 
-[[Preprint]](https://arxiv.org/abs/2304.07444)
+[[Paper]](https://) [[ArXiv]](https://arxiv.org/abs/2304.07444) [[Code]](https://github.com/danhntd/FS-CDIS)
 
 
 ## 1. Environment Setup
@@ -33,18 +33,25 @@ After setting up the dependencies, use the command `pip install -e .` in this ro
 
 ### Download the datasets
 
-The proposed CAMO-FS is available at this [link]().
+The proposed CAMO-FS is available at this [link](https://www.kaggle.com/datasets/danhnt/camo-fs-dataset).
 
 ### Register datasets
 Detectron2 requires a step of data registration for those who want to use the external datasets ([Detectron2 Docs](https://detectron2.readthedocs.io/en/latest/tutorials/datasets.html)).
 
 
 ## 3. Training Pipeline
-Our proposed FS-CDIS framework:
-<img align="center" src="/visualization/framework.png">
+<!-- Our proposed FS-CDIS framework:
+<img align="center" src="/visualization/framework.png"> -->
+
+Our detailed proposals of instance triplet loss and instance memory storage:
+<img align="center" src="/visualization/framework_fs-cdis-memo-redesign-ieee-access.png">
 
 
 
+
+### Configurations
+
+All configs can be found in the ./configs/ directory.
 
 <!-- Initial parameters:
 ```
@@ -65,16 +72,26 @@ Our proposed FS-CDIS framework:
 
 The whole script commands can be found in `./scripts/*`.
 
-**Released checkpoints and results:**
 
-We provide the checkpoints of our final model :
+### Released checkpoints and results:
 
-| Model R-101     | FS-CDIS-Triplet | FS-CDIS-Memory |
-| ------------- |:---------------------:|:--------------------------:|
-| 1-shot |   [link](https://)    |     [link](https://)       |
-| 2-shot |   [link](https://)    |     [link](https://)       |
-| 3-shot |   [link](https://)    |     [link](https://)       |
-| 5-shot |   [link](https://)    |     [link](https://)       |
+We provide the checkpoints of our final model:
+
+<!-- | Model R-101 |   FS-CDIS-ITL   |   FS-CDIS-IMS    |
+| ----------- |:---------------:|:----------------:|
+|    1-shot   |[link](https://) | [link](https://) |
+|    2-shot   |[link](https://) | [link](https://) |
+|    3-shot   |[link](https://) | [link](https://) |
+|    5-shot   |[link](https://) | [link](https://) | -->
+
+
+| Model R-101 |   FS-CDIS-ITL    | mask AP  | box AP  |   FS-CDIS-IMS    | mask AP  | box AP  |
+|:-----------:|:----------------:|:---:|:---:|:----------------:|:---:|:---:|
+|   1-shot    | [link](https://uithcm-my.sharepoint.com/:u:/g/personal/danhnt_16_ms_uit_edu_vn/Eef2Z-cEJkBOj-iOn3Cj_1IBYES8HEznelUznSkBR0qJNw?e=M9KC0a) |4.46 |4.04 | [link](https://uithcm-my.sharepoint.com/:u:/g/personal/danhnt_16_ms_uit_edu_vn/EUTsy7lkCU5PlqO8jIhLNsUBbAg-lstj6LygKPGff82CmA?e=H55kwj) |5.46 |4.50 |
+|   2-shot    | [link](https://uithcm-my.sharepoint.com/:u:/g/personal/danhnt_16_ms_uit_edu_vn/EUUPqoMv3CROhw3_X0171sQBos1ro9nGmsnWReMQEavoTA?e=EngAXx) |5.57 |7.28 | [link](https://uithcm-my.sharepoint.com/:u:/g/personal/danhnt_16_ms_uit_edu_vn/EdvySeWhDzZHss_AB9OiDGwBQAwu5576wIHb7fyBcCW2aA?e=D8w4ml) |6.95 |6.95 |
+|   3-shot    | [link](https://uithcm-my.sharepoint.com/:u:/g/personal/danhnt_16_ms_uit_edu_vn/EeMmWhLwAyZMn0mA0QUPC2UB2ELHzRrAwmToiCKC0bIdmw?e=jqDjTJ) |6.41 |7.49 | [link](https://uithcm-my.sharepoint.com/:u:/g/personal/danhnt_16_ms_uit_edu_vn/ETNHaMzUjTdAkHPgOYTe8uEBZ9qsmKeXGcmXG6789R-oBA?e=NgUcEA) |7.36 |7.55 |
+|   5-shot    | [link](https://uithcm-my.sharepoint.com/:u:/g/personal/danhnt_16_ms_uit_edu_vn/Ecs66hnQn5dBkgQVdjXUkMgBTM-MppZjLnhcScmO1uF4Pw?e=4T5uws) |8.48 |9.76 | [link](https://uithcm-my.sharepoint.com/:u:/g/personal/danhnt_16_ms_uit_edu_vn/EXfk8mPDjSREp4Q5LRb2Aw4B8lSlAfuHS3ym1cB-uRmbrw?e=U0Sb6x) |9.61 |10.36 |
+
 
 
 ## 4. Visualization
@@ -86,11 +103,11 @@ We provide the checkpoints of our final model :
 ## Citation
 Please use the following bibtex to cite this repository:
 ```
-@article{nguyen2023few,
+@article{nguyen2024few,
   title={Few-shot Camouflaged Animal Detection and Segmentation},
   author={Nguyen, Thanh-Danh and Vu, Anh-Khoa Nguyen and Nguyen, Nhat-Duy and Nguyen, Vinh-Tiep and Ngo, Thanh Duc and Do, Thanh-Toan and Tran, Minh-Triet and Nguyen, Tam V},
   journal={arXiv preprint arXiv:2304.07444},
-  year={2023}
+  year={2024}
 }
 ```
 
