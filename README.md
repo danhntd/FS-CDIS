@@ -1,6 +1,7 @@
 # The Art of Camouflage: Few-shot Learning for Animal Detection and Segmentation
 
 This repository is the official implementation of the paper entitled: **The Art of Camouflage: Few-shot Learning for Animal Detection and Segmentation**
+
 **Authors**: Thanh-Danh Nguyen, Anh-Khoa Nguyen Vu, Nhat-Duy Nguyen, Vinh-Tiep Nguyen, Thanh Duc Ngo, Thanh-Toan Do, Minh-Triet Tran, Tam V. Nguyen*.
 
 [[Paper]](https://) [[ArXiv]](https://arxiv.org/abs/2304.07444) [[Code]](https://github.com/danhntd/FS-CDIS)
