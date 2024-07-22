@@ -1,18 +1,21 @@
 # The Art of Camouflage: Few-shot Learning for Animal Detection and Segmentation
 
-This repository is the official implementation of the paper entitled: **The Art of Camouflage: Few-shot Learning for Animal Detection and Segmentation**
+This repository is the official implementation of the paper entitled: **The Art of Camouflage: Few-shot Learning for Animal Detection and Segmentation**.
 
 **Authors**: Thanh-Danh Nguyen, Anh-Khoa Nguyen Vu, Nhat-Duy Nguyen, Vinh-Tiep Nguyen, Thanh Duc Ngo, Thanh-Toan Do, Minh-Triet Tran, Tam V. Nguyen*.
 
-[[Paper]](https://) [[ArXiv]](https://arxiv.org/abs/2304.07444) [[Code]](https://github.com/danhntd/FS-CDIS)
+[[Paper]](https://arxiv.org/abs/2304.07444) [[ArXiv]](https://arxiv.org/abs/2304.07444) [[Code]](https://github.com/danhntd/FS-CDIS)
 
+---
+## Updates
+[2024/7] We have released the checkpoints, visualization, and initial instructions for FS-CDIS⚡!
 
 ## 1. Environment Setup
 Download and install Anaconda with the recommended version from [Anaconda Homepage](https://www.anaconda.com/download): [Anaconda3-2019.03-Linux-x86_64.sh](https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh) 
  
 ```
 git clone https://github.com/danhntd/FS-CDIS.git
-cd FSCDIS
+cd FS-CDIS
 curl -O https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
 bash Anaconda3-2019.03-Linux-x86_64.sh
 ```
@@ -37,7 +40,10 @@ After setting up the dependencies, use the command `pip install -e .` in this ro
 The proposed CAMO-FS is available at this [link](https://www.kaggle.com/datasets/danhnt/camo-fs-dataset).
 
 ### Register datasets
-Detectron2 requires a step of data registration for those who want to use the external datasets ([Detectron2 Docs](https://detectron2.readthedocs.io/en/latest/tutorials/datasets.html)).
+Detectron2 requires a step of data registration for those who want to use the external datasets ([Detectron2 Docs](https://detectron2.readthedocs.io/en/latest/tutorials/datasets.html)), which is already prepared in this repository.
+
+
+
 
 
 ## 3. Training Pipeline
@@ -64,12 +70,33 @@ All configs can be found in the `./configs/` directory.
 ```
 
 ```
+-->
+<!-- ### Pre-defined variables
+```
+export CUDA_VISIBLE_DEVICES=0
+export NGPUS=1
+
+cfg_MODEL='
+MODEL.ROI_HEADS.NUM_CLASSES 16
+SOLVER.MAX_ITER 2000
+'
+
+MODEL_NAME='novel1_1shot'
+OUTPUT_DIR=checkpoints/camo_mtfa_default/camo_model_${MODEL_NAME}_mask_rcnn_R_101_FPN_mtfa
+config=configs/CAMO-shot_mtfa_default/mask_rcnn_R_101_FPN_ft_fsdet_cos_${MODEL_NAME}.yaml
+WEIGHT=weights/mrcnn_r101_fpn_80cls.pkl
+```
 
 ### Testing
 
 ```
+python tools/run_train.py --num-gpus ${NGPUS} \
+			   --dist-url auto \
+			   --resume \
+			   --config-file ${config} \
+			   --opts MODEL.WEIGHTS ${WEIGHT} OUTPUT_DIR ${OUTPUT_DIR} ${cfg_MODEL} SOLVER.STEPS "(40000, 54000)"
 
-``` -->
+```  -->
 
 The whole script commands can be found in `./scripts/*`.
 
