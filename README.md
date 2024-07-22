@@ -125,7 +125,7 @@ We provide the checkpoints of our final model:
 ## 4. Visualization
 
 <p align="center">
-  <img width="800" src="/visualization/visualization.png">
+  <img width="600" src="/visualization/visualization.png">
 </p>
 
 ## Citation
