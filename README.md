@@ -1,10 +1,10 @@
 # The Art of Camouflage: Few-shot Learning for Animal Detection and Segmentation
 
-This repository is the official implementation of the paper entitled: **The Art of Camouflage: Few-shot Learning for Animal Detection and Segmentation**.
+This repository is the official implementation of the paper entitled: **The Art of Camouflage: Few-shot Learning for Animal Detection and Segmentation**, IEEE Access, 2024.
 
 **Authors**: Thanh-Danh Nguyen, Anh-Khoa Nguyen Vu, Nhat-Duy Nguyen, Vinh-Tiep Nguyen, Thanh Duc Ngo, Thanh-Toan Do, Minh-Triet Tran, Tam V. Nguyen*.
 
-[[Paper]](https://arxiv.org/abs/2304.07444) [[ArXiv]](https://arxiv.org/abs/2304.07444) [[Code]](https://github.com/danhntd/FS-CDIS)
+[[Paper]](https://ieeexplore.ieee.org/document/10608133) [[ArXiv]](https://arxiv.org/abs/2304.07444) [[Code]](https://github.com/danhntd/FS-CDIS)
 
 ---
 ## Updates
@@ -125,14 +125,14 @@ We provide the checkpoints of our final model:
 ## 4. Visualization
 
 <p align="center">
-  <img width="600" src="/visualization/visualization.png">
+  <img width="800" src="/visualization/visualization.png">
 </p>
 
 ## Citation
 Please use the following bibtex to cite this repository:
 ```
-@article{nguyen2024few,
-  title={Few-shot Camouflaged Animal Detection and Segmentation},
+@article{nguyen2024art,
+  title={The Art of Camouflage: Few-shot Learning for Animal Detection and Segmentation},
   author={Nguyen, Thanh-Danh and Vu, Anh-Khoa Nguyen and Nguyen, Nhat-Duy and Nguyen, Vinh-Tiep and Ngo, Thanh Duc and Do, Thanh-Toan and Tran, Minh-Triet and Nguyen, Tam V},
   journal={IEEE Access},
   volume={-},
